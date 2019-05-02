@@ -5,7 +5,7 @@ using namespace std;
 ////////STUDENT NODE/////////
 StudentNode::StudentNode()
 {
-
+  
 }
 
 StudentNode::~StudentNode()
