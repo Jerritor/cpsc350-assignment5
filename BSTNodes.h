@@ -21,6 +21,10 @@ class StudentNode : public PersonNode
 		StudentNode(string serialized);
 		StudentNode(int i, string n, string l, string m, double g, int a);
 		~StudentNode();
+
+		virtual string serializeNode();
+		virtual void printInfo();
+
 		StudentNode *left, *right;
 
 		string major;
@@ -34,6 +38,9 @@ class FacultyNode : public PersonNode
 	public:
 		FacultyNode();
 		~FacultyNode();
+
+		virtual string serializeNode();
+		virtual void printInfo();
 
 		FacultyNode *left, *right;
 
