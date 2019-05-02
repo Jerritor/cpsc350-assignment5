@@ -38,6 +38,8 @@ class FacultyBST
 		StudentNode findID(int id);
 		void removeStudent(FacultyNode s);
 
+		void removeAdvisees(int fac);
+
 		int size();
 		bool isEmpty();
 

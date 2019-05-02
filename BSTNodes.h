@@ -34,6 +34,7 @@ class FacultyNode : public PersonNode
 	public:
 		FacultyNode();
 		~FacultyNode();
+
 		FacultyNode *left, *right;
 
 		string department;
