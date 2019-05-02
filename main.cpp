@@ -76,33 +76,62 @@ int int main(int argc, char const *argv[])
     if (choice == 7)
     {
       //pre-step: create object of type student, given their ID, name, level, major, GPA, and advisor
-      //1. Add student to tree
+      //pre-step: check trees (both) for duplicate object. Evaluate whether ID already exists.
+      //1. Add student to tree, given student object and tree as arguments.
       //2. OPTIONAL: re-balance tree (lol that ain't happening)
       //3. print upon success or failure.
+      //4. runtime is O(log(n)), right?
     }
     if (choice == 8)
     {
-      //
+      //1. use search function on the (STUDENT) BST, using ID number and tree as function arguments
+      //2. mark for deletion. Do not actually delete the node.
+      //3. print upon success or failure
+      //4. runtime should be O(log(n))
+      //5. ensure that searching for that node does not return anything aside from NULL
     }
     if (choice == 9)
     {
-      //Print all students and their info (sorted ascending)
+      //pre-step: create object of type faculty, given their ID, name, level, department, and student advisees, if any
+      //pre-step: check trees (both) for duplicate object. Evaluate whether ID already exists.
+      //1. Add faculty to tree, given student object and tree as arguments.
+      //2. OPTIONAL: re-balance tree (lol that ain't happening)
+      //3. print upon success or failure.
+      //4. runtime is O(log(n)), right?
     }
     if (choice == 10)
     {
-      //Print all students and their info (sorted ascending)
+      //pre-step: mandate that a faculty member must have 0 existing advisees before it may be deleted.
+      //pre-step: this will ensure that students do not have a NULL advisor without needing us to write more code
+      //1. use search function on the (FACULTY) BST, using ID number and tree as function arguments
+      //2. mark for deletion. Do not actually delete the node.
+      //3. print upon success or failure
+      //4. runtime should be O(log(n))
+      //5. ensure that searching for that node does not return anything aside from NULL
     }
     if (choice == 11)
     {
-      //Print all students and their info (sorted ascending)
+      //pre-step: prompt for student ID and new faculty ID
+      //pre-step: check for existance of both student and faculty
+      //1. use search function on the (STUDENT) BST, using ID number and tree as function arguments
+      //2. set student faculty advisor to new value.
+      //3. use search function on the (faculty) BST, using ID number and tree as function arguments
+      //4. set faculty advisee to new value (add to list).
+      //5. runtime should be O(2log(n))
     }
     if (choice == 12)
     {
-      //Print all students and their info (sorted ascending)
+      //pre-step: prompt for student ID and new faculty ID
+      //pre-step: check for existance of both student and faculty
+      //1. use search function on the (FACULTY) BST, using ID number and tree as function arguments
+      //2. remove faculty advisee value
+      //3. use search function on the (STUDENT) BST, using ID number and tree as function arguments
+      //4. remove student faculty advisor value.
+      //5. runtime should be O(2log(n))
     }
     if (choice == 13)
     {
-      //Print all students and their info (sorted ascending)
+      //How the hell do we serialise?
     }
     if (choice == 14)
     {
