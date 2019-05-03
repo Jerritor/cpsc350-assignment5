@@ -73,7 +73,7 @@ void StudentBST::delAllRec(StudentNode node)
 
 FacultyBST::FacultyBST()
 {
-
+	root = null;
 }
 
 FacultyBST::~FacultyBST()
