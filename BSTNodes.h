@@ -43,9 +43,12 @@ class FacultyNode : public PersonNode
 
 		virtual string serializeNode();
 		virtual void printInfo();
+		void getName();
 
 		FacultyNode *left, *right;
 
 		string department;
 		int[] advisees;
+	private:
+		int adviseeSize;
 };

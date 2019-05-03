@@ -30,7 +30,11 @@ virtual string StudentNode::serializeNode()
 
 virtual void StudentNode::printInfo()
 {
-
+	cout << id << ": " << name << endl;
+	cout << "Class Standing: " << level << endl;
+	cout << "Major: " << major << endl;
+	cout << "GPA: " << gpa << endl;
+	//advisor is printed in bst.printInorder()
 }
 
 ///////FACULTY NODE//////////
@@ -54,12 +58,27 @@ FacultyNode::~FacultyNode()
 
 }
 
-virtual string StudentNode::serializeNode()
+virtual string FacultyNode::serializeNode()
 {
 
 }
 
-virtual void StudentNode::printInfo()
+virtual void FacultyNode::printInfo()
 {
+	cout << id << ": " << name << endl;
+	cout << "Title: " << level << endl;
+	cout << "Department: " << department << endl;
+	cout << "Advisor(s): " << endl;
+	for (int i = 0; i < adviseeSize; i++)
+	{
+		if (i > 0) cout << ", ";
+		cout << advisees[i];
+	}
+	cout << endl;
+	//advisor is printed in bst.printInorder()
+}
 
+string FacultyNode::getName()
+{
+	return name;
 }

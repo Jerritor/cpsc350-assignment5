@@ -15,10 +15,12 @@ int studentIDs[100]; //initialized empty
 
 int int main(int argc, char const *argv[])
 {
-  StudentBST studentTable;
-  FacultyTable facultyTable;
+  StudentBST masterStudent;
+  FacultyTable masterFaculty;
   //Check for existence of facultyTable and studentTable here
-  while (true)
+
+  bool l = false;
+  while (l)
   {
     if (choice == 1)
     {

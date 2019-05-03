@@ -52,9 +52,9 @@ void StudentBST::insert(StudentNode s)
 	}
 }
 
-void StudentBST::printTree()
+void StudentBST::printTree(FacultyBST* facBST)
 {
-	printInorder(root);
+	printInorder(facBST,root);
 }
 
 void StudentBST::serializeTree()
@@ -99,11 +99,15 @@ void StudentBST::delAllRec(StudentNode node)
     	}
 }
 
-void printInorder(StudentNode* node)
+void printInorder(FacultyBST* facBST, StudentNode* node)
 {
 	if(node == NULL) return;
 	printInorder(node->left);  //first recur on left child
-    	node.PrintInfo();
+
+	int advisor = node.printInfo(); //prints everything but advisor
+	cout << "Advisor: " << facBST.find(advisor).getName() << endl;
+
+	//printing advisor of each student
     	printInorder(node->right); //now recur on right child
 }
 
