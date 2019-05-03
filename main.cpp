@@ -1,9 +1,7 @@
-#include "BSTNodes.cpp"
-#include "StudentBST.cpp"
-
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "DBTrees.h"
 
 using namespace std;
 
@@ -12,12 +10,13 @@ int choice = 0;
 int facultyIDs[100]; //initialized empty
 int studentIDs[100]; //initialized empty
 
-int int main(int argc, char const *argv[])
+int main(int argc, char **argv)
 {
   StudentBST masterStudent;
-  FacultyTable masterFaculty;
+  FacultyBST masterFaculty;
   //Check for existence of facultyTable and studentTable here
 
+/**
   bool l = false;
   while (l)
   {
@@ -140,9 +139,12 @@ int int main(int argc, char const *argv[])
     }
     if (choice == 14)
     {
-      exit(0)
+      exit(0);
       //System Exit
     }
   }
+**/
+
+  cout << "Program exited succesfully." << endl;
   return 0;
 }
