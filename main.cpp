@@ -16,7 +16,6 @@ int main(int argc, char **argv)
   FacultyBST masterFaculty;
   //Check for existence of facultyTable and studentTable here
 
-/**
   bool l = false;
   while (l)
   {
@@ -26,6 +25,7 @@ int main(int argc, char **argv)
       //1. iterate through (STUDENT) tree using INORDER TRAVERSAL
       //2. return student information after the lookup
       //3. print to screen
+      masterStudent.printTree();
     }
     if (choice == 2)
     {
@@ -34,6 +34,7 @@ int main(int argc, char **argv)
       //1.1 We can reuse the function from option 1 here.
       //2. return student information after the lookup
       //3. print to screen
+      masterFaculty.printTree();
     }
     if (choice == 3)
     {
@@ -42,6 +43,8 @@ int main(int argc, char **argv)
       //2. return student info based on ID after navigating.
       //3. choice should have a runtime of O(log(n))
       //4. print to screen
+      int id = 0;
+      masterStudent.find(id).printInfo();
     }
     if (choice == 4)
     {
@@ -51,6 +54,8 @@ int main(int argc, char **argv)
       //2. return faculty info based on ID after navigating
       //3. choice should have a runtime of O(log(n))
       //4. print to screen
+      int id = 0;
+      masterStudent.find(id).printInfo();
     }
 
     if (choice == 5)
@@ -62,6 +67,9 @@ int main(int argc, char **argv)
       //4. return faculty info, including name and ID number.
       //5. print to screen.
       //6. choice should have a runtime of O(2log(n)) due to double search.
+      int id = 0;
+      int facid = masterStudent.find(id).advisor;
+      masterFaculty.find(facid).printInfo();
     }
 
     if (choice == 6)
@@ -76,6 +84,9 @@ int main(int argc, char **argv)
       //4. choice should have a runtime of O(xlog(n)) with x representing number of students listed by advisor
       //5. delete student_ID_queue
       //6. print deletion confirmation
+      int id = 0;
+      masterFaculty.find(id).printAdvisors();
+
     }
     if (choice == 7)
     {
@@ -85,6 +96,13 @@ int main(int argc, char **argv)
       //2. OPTIONAL: re-balance tree (lol that ain't happening)
       //3. print upon success or failure.
       //4. runtime is O(log(n)), right?
+
+      int i, a;
+      double g;
+      string n,l,m;
+
+      StudentNode *node = new StudentNode(i,n,l,m,g,a);
+      masterStudent.insert(node);
     }
     if (choice == 8)
     {
@@ -93,6 +111,9 @@ int main(int argc, char **argv)
       //3. print upon success or failure
       //4. runtime should be O(log(n))
       //5. ensure that searching for that node does not return anything aside from NULL
+
+      int id = 0;
+      masterFaculty.remove(id);
     }
     if (choice == 9)
     {
@@ -102,6 +123,13 @@ int main(int argc, char **argv)
       //2. OPTIONAL: re-balance tree (lol that ain't happening)
       //3. print upon success or failure.
       //4. runtime is O(log(n)), right?
+
+      int i,asize;
+      string n,l,d;
+      int a[1];
+
+      FacultyNode *node = new FacultyNode(i,n,l,d,a,asize);
+      masterFaculty.insert(node);
     }
     if (choice == 10)
     {
@@ -112,6 +140,9 @@ int main(int argc, char **argv)
       //3. print upon success or failure
       //4. runtime should be O(log(n))
       //5. ensure that searching for that node does not return anything aside from NULL
+
+      int id = 0;
+      masterFaculty.remove(id);
     }
     if (choice == 11)
     {
@@ -122,6 +153,9 @@ int main(int argc, char **argv)
       //3. use search function on the (faculty) BST, using ID number and tree as function arguments
       //4. set faculty advisee to new value (add to list).
       //5. runtime should be O(2log(n))
+      int stuid = 0;
+      int facid = 0;
+      masterStudent.updateAdvisor(stuid,facid);
     }
     if (choice == 12)
     {
@@ -132,10 +166,14 @@ int main(int argc, char **argv)
       //3. use search function on the (STUDENT) BST, using ID number and tree as function arguments
       //4. remove student faculty advisor value.
       //5. runtime should be O(2log(n))
+
+      int facid;
+      masterFaculty.removeAdvisees(facid);
     }
     if (choice == 13)
     {
       //How the hell do we serialise?
+      //looooooool
     }
     if (choice == 14)
     {
@@ -143,7 +181,6 @@ int main(int argc, char **argv)
       //System Exit
     }
   }
-**/
 
   cout << "Program exited succesfully." << endl;
   return 0;
