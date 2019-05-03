@@ -1,6 +1,5 @@
 #include "BSTNodes.cpp"
-#include "BSTNodes.h"
-#include "StudentBST.h"
+#include "StudentBST.cpp"
 
 #include <iostream>
 #include <fstream>

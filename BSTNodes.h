@@ -38,17 +38,17 @@ class FacultyNode : public PersonNode
 	public:
 		FacultyNode();
 		FacultyNode(string serialized);
-		FacultyNode(int i, string n, string l, string d, string[] a); //parser
+		FacultyNode(int i, string n, string l, string d, int a[]); //parser
 		~FacultyNode();
 
 		virtual string serializeNode();
 		virtual void printInfo();
-		void getName();
+		string getName();
 
 		FacultyNode *left, *right;
 
 		string department;
-		int[] advisees;
+		int advisees[10];
 	private:
 		int adviseeSize;
 };

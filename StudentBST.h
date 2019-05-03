@@ -4,51 +4,51 @@
 
 using namespace std;
 
-class StudentBST
-{
-	public:
-		StudentBST();
-		~StudentBST();
-
-		void insert(StudentNode s);
-		void printTree(); //prints inorder
-		void serializeTree(); //serializes postorder
-		StudentNode findID(int id);
-		void remove(StudentNode s);
-
-		int size();
-		bool isEmpty();
-
-		void updateAdvisor(int student, int faculty);
-
-		StudentNode *root;
-	private:
-		void delAllRec(StudentNode node);
-		void printInorder(StudentNode* node); //rec
-		int size;
-
-};
-
 class FacultyBST
 {
 	public:
 		FacultyBST();
 		~FacultyBST();
 
-		void insert(FacultyNode f);
+		void insert(FacultyNode *f);
 		void printTree(); //prints inorder
 		void serializeTree(); //serializes postorder
-		StudentNode findID(int id);
-		void remove(FacultyNode f);
+		FacultyNode findID(int id);
+		void remove(FacultyNode *f);
 
-		int size();
+		int getSize();
 		bool isEmpty();
 
 		void removeAdvisees(int fac);
 
-		StudentNode *root;
+		FacultyNode *root;
 	private:
-		void delAllRec(FacultyNode node);
+		void delAllRec(FacultyNode *node);
 		void printInorder(FacultyNode* node); //rec
 		int size;
+};
+
+class StudentBST
+{
+	public:
+		StudentBST();
+		~StudentBST();
+
+		void insert(StudentNode *s);
+		void printTree(FacultyBST* facBST); //prints inorder
+		void serializeTree(); //serializes postorder
+		StudentNode findID(int id);
+		void remove(StudentNode *s);
+
+		int getSize();
+		bool isEmpty();
+
+		void updateAdvisor(int student, int faculty);
+
+		StudentNode *root;
+	private:
+		void delAllRec(StudentNode *node);
+		void printInorder(StudentNode *node); //rec
+		int size;
+
 };

@@ -1,4 +1,5 @@
 #include <iostream>
+#include "BSTNodes.h"
 
 using namespace std;
 
@@ -23,12 +24,12 @@ StudentNode::~StudentNode()
 
 }
 
-virtual string StudentNode::serializeNode()
+string StudentNode::serializeNode()
 {
 
 }
 
-virtual void StudentNode::printInfo()
+void StudentNode::printInfo()
 {
 	cout << id << ": " << name << endl;
 	cout << "Class Standing: " << level << endl;
@@ -43,12 +44,12 @@ FacultyNode::FacultyNode()
 
 }
 
-FacultyNode(string serialized)
+FacultyNode::FacultyNode(string serialized)
 {
 
 }
 
-FacultyNode(int i, string n, string l, string d, string[] a) //parser
+FacultyNode::FacultyNode(int i, string n, string l, string d, int a[]) //parser
 {
 
 }
@@ -58,12 +59,12 @@ FacultyNode::~FacultyNode()
 
 }
 
-virtual string FacultyNode::serializeNode()
+string FacultyNode::serializeNode()
 {
 
 }
 
-virtual void FacultyNode::printInfo()
+void FacultyNode::printInfo()
 {
 	cout << id << ": " << name << endl;
 	cout << "Title: " << level << endl;
