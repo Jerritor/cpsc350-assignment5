@@ -10,6 +10,8 @@ using namespace std;
 
 int procedure = 0;
 int choice = 0;
+int facultyIDs[100]; //initialized empty
+int studentIDs[100]; //initialized empty
 
 int int main(int argc, char const *argv[])
 {
