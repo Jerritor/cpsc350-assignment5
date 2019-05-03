@@ -24,7 +24,7 @@ class StudentBST
 		StudentNode *root;
 	private:
 		void delAllRec(StudentNode node);
-		void printInorder(StudentNode* n); //rec
+		void printInorder(StudentNode* node); //rec
 		int size;
 
 };
@@ -49,6 +49,6 @@ class FacultyBST
 		StudentNode *root;
 	private:
 		void delAllRec(FacultyNode node);
-		void printInorder(FacultyNode* n); //rec
+		void printInorder(FacultyNode* node); //rec
 		int size;
 };

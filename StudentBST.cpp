@@ -54,7 +54,7 @@ void StudentBST::insert(StudentNode s)
 
 void StudentBST::printTree()
 {
-
+	printInorder(root);
 }
 
 void StudentBST::serializeTree()
@@ -97,6 +97,14 @@ void StudentBST::delAllRec(StudentNode node)
         	DestroyRecursive(node->right);
         	delete node;
     	}
+}
+
+void printInorder(StudentNode* node)
+{
+	if(node == NULL) return;
+	printInorder(node->left);  //first recur on left child
+    	node.PrintInfo();
+    	printInorder(node->right); //now recur on right child
 }
 
 /////////////////////////
@@ -154,11 +162,7 @@ void FacultyBST::insert(FacultyNode f)
 
 void FacultyBST::printTree() //recursive 'i hope this works'
 {
-	//prints inorder
-	if(node == NULL) return;
-	printTree(node->left);  //first recur on left child
-    	cout << node->data << " "; //then print the data of node
-    	printInorder(node->right); //now recur on right child
+	printInorder(root);
 }
 
 void FacultyBST::serializeTree()
@@ -199,4 +203,12 @@ void FacultyBST::delAllRec(FacultyNode node)
         	DestroyRecursive(node->right);
         	delete node;
     	}
+}
+
+void printInorder(FacultyNode* node)
+{
+	if(node == NULL) return;
+	printInorder(node->left);  //first recur on left child
+    	node.PrintInfo();
+    	printInorder(node->right); //now recur on right child
 }
