@@ -10,11 +10,11 @@ class StudentBST
 		StudentBST();
 		~StudentBST();
 
-		void insertStudent(StudentNode s);
+		void insert(StudentNode s);
 		void printTree(); //prints inorder
 		void serializeTree(); //serializes postorder
 		StudentNode findID(int id);
-		void removeStudent(StudentNode s);
+		void remove(StudentNode s);
 
 		int size();
 		bool isEmpty();
@@ -24,6 +24,7 @@ class StudentBST
 		StudentNode *root;
 	private:
 		void delAllRec(StudentNode node);
+		void printInorder(StudentNode* n); //rec
 		int size;
 
 };
@@ -34,11 +35,11 @@ class FacultyBST
 		FacultyBST();
 		~FacultyBST();
 
-		void insertStudent(FacultyNode s);
+		void insert(FacultyNode f);
 		void printTree(); //prints inorder
 		void serializeTree(); //serializes postorder
 		StudentNode findID(int id);
-		void removeStudent(FacultyNode s);
+		void remove(FacultyNode f);
 
 		int size();
 		bool isEmpty();
@@ -48,5 +49,6 @@ class FacultyBST
 		StudentNode *root;
 	private:
 		void delAllRec(FacultyNode node);
+		void printInorder(FacultyNode* n); //rec
 		int size;
 };

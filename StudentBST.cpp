@@ -17,7 +17,39 @@ StudentBST::~StudentBST()
 
 void StudentBST::insert(StudentNode s)
 {
+	StudentNode *node = s;
+	if(root == NULL) //empty BST
+		root = node;
+	else
+	{
+		int value = node->id;
+		TreeNode *current = root;
+		TreeNode *parent; //will be initialized in true statement
 
+		while(true)
+		{
+			parent = current;
+			if(value < current->key) //left
+			{
+				current = current->left;
+				if(current == NULL)
+				{
+					parent->left = node;
+					break;
+				}
+				//else keep looking
+			}
+			else //right: id > previous id
+			{
+				current = current->right;
+				if(current == NULL)
+				{
+					parent->right = node;
+					break;
+				}
+			}
+		}
+	}
 }
 
 void StudentBST::printTree()
@@ -35,7 +67,7 @@ StudentNode StudentBST::findID(int id)
 
 }
 
-void StudentBST::removeStudent(StudentNode s)
+void StudentBST::remove(StudentNode s)
 {
 
 }
@@ -81,14 +113,52 @@ FacultyBST::~FacultyBST()
 	delAllRec(root);
 }
 
-void FacultyBST::insert(StudentNode s)
+void FacultyBST::insert(FacultyNode f)
 {
+	//make sure value doesn't exist
 
+	FacultyNode *node = f;
+	if(root == NULL) //empty BST
+		root = node;
+	else
+	{
+		int value = node->id;
+		TreeNode *current = root;
+		TreeNode *parent; //will be initialized in true statement
+
+		while(true)
+		{
+			parent = current;
+			if(value < current->key) //left
+			{
+				current = current->left;
+				if(current == NULL)
+				{
+					parent->left = node;
+					break;
+				}
+				//else keep looking
+			}
+			else //right: id > previous id
+			{
+				current = current->right;
+				if(current == NULL)
+				{
+					parent->right = node;
+					break;
+				}
+			}
+		}
+	}
 }
 
-void FacultyBST::printTree()
+void FacultyBST::printTree() //recursive 'i hope this works'
 {
-
+	//prints inorder
+	if(node == NULL) return;
+	printTree(node->left);  //first recur on left child
+    	cout << node->data << " "; //then print the data of node
+    	printInorder(node->right); //now recur on right child
 }
 
 void FacultyBST::serializeTree()
@@ -101,7 +171,7 @@ StudentNode FacultyBST::findID(int id)
 
 }
 
-void FacultyBST::removeStudent(StudentNode s)
+void FacultyBST::removeStudent(FacultyNode s)
 {
 
 }
