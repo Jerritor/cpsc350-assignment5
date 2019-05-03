@@ -13,6 +13,8 @@ int choice = 0;
 
 int int main(int argc, char const *argv[])
 {
+  StudentBST studentTable;
+  FacultyTable facultyTable;
   //Check for existence of facultyTable and studentTable here
   while (true)
   {
