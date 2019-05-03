@@ -15,16 +15,15 @@ class StudentBST
 		void serializeTree(); //serializes postorder
 		StudentNode findID(int id);
 		void removeStudent(StudentNode s);
-
-		void updateAdvisor(int student, int faculty);
-
 		int size();
 		bool isEmpty();
+
+		void updateAdvisor(int student, int faculty);
 
 		StudentNode *root;
 	private:
 		int size;
-}
+};
 
 class FacultyBST
 {
@@ -37,13 +36,12 @@ class FacultyBST
 		void serializeTree(); //serializes postorder
 		StudentNode findID(int id);
 		void removeStudent(FacultyNode s);
-
-		void removeAdvisees(int fac);
-
 		int size();
 		bool isEmpty();
+
+		void removeAdvisees(int fac);
 
 		StudentNode *root;
 	private:
 		int size;
-}
+};

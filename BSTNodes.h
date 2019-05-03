@@ -19,7 +19,7 @@ class StudentNode : public PersonNode
 	public:
 		StudentNode();
 		StudentNode(string serialized);
-		StudentNode(int i, string n, string l, string m, double g, int a);
+		StudentNode(int i, string n, string l, string m, double g, int a); //parser
 		~StudentNode();
 
 		virtual string serializeNode();
@@ -37,6 +37,8 @@ class FacultyNode : public PersonNode
 	//inherits id, name, level
 	public:
 		FacultyNode();
+		FacultyNode(string serialized);
+		FacultyNode(int i, string n, string l, string d, string[] a); //parser
 		~FacultyNode();
 
 		virtual string serializeNode();
@@ -46,6 +48,4 @@ class FacultyNode : public PersonNode
 
 		string department;
 		int[] advisees;
-	private:
-
 };
