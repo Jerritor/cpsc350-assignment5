@@ -2,15 +2,17 @@
 
 using namespace std;
 
-///////STUDENT BST//////
+/////////////////////////
+///////STUDENT BST///////
+/////////////////////////
 StudentBST::StudentBST()
 {
-
+	root = NULL;
 }
 
 StudentBST::~StudentBST()
 {
-
+	delAllRec(root);
 }
 
 void StudentBST::insert(StudentNode s)
@@ -38,11 +40,6 @@ void StudentBST::removeStudent(StudentNode s)
 
 }
 
-void StudentBST::updateAdvisor(int student, int faculty)
-{
-
-}
-
 int StudentBST::size()
 {
 
@@ -53,7 +50,26 @@ bool StudentBST::isEmpty()
 
 }
 
-///////FACULTY BST//////////////
+void StudentBST::updateAdvisor(int student, int faculty)
+{
+
+}
+
+//PRIVATE//
+
+void StudentBST::delAllRec(StudentNode node)
+{
+	if (node)
+   	{
+        	DestroyRecursive(node->left);
+        	DestroyRecursive(node->right);
+        	delete node;
+    	}
+}
+
+/////////////////////////
+///////FACULTY BST///////
+/////////////////////////
 
 FacultyBST::FacultyBST()
 {
@@ -62,7 +78,7 @@ FacultyBST::FacultyBST()
 
 FacultyBST::~FacultyBST()
 {
-
+	delAllRec(root);
 }
 
 void FacultyBST::insert(StudentNode s)
@@ -90,11 +106,6 @@ void FacultyBST::removeStudent(StudentNode s)
 
 }
 
-void FacultyBST::removeAdvisees(int fac)
-{
-
-}
-
 int FacultyBST::size()
 {
 
@@ -103,4 +114,19 @@ int FacultyBST::size()
 bool FacultyBST::isEmpty()
 {
 
+}
+
+void FacultyBST::removeAdvisees(int fac)
+{
+
+}
+
+void FacultyBST::delAllRec(FacultyNode node)
+{
+	if (node)
+   	{
+        	DestroyRecursive(node->left);
+        	DestroyRecursive(node->right);
+        	delete node;
+    	}
 }

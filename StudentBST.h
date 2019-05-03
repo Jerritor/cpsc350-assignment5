@@ -15,6 +15,7 @@ class StudentBST
 		void serializeTree(); //serializes postorder
 		StudentNode findID(int id);
 		void removeStudent(StudentNode s);
+
 		int size();
 		bool isEmpty();
 
@@ -22,7 +23,9 @@ class StudentBST
 
 		StudentNode *root;
 	private:
+		void delAllRec(StudentNode node);
 		int size;
+
 };
 
 class FacultyBST
@@ -36,6 +39,7 @@ class FacultyBST
 		void serializeTree(); //serializes postorder
 		StudentNode findID(int id);
 		void removeStudent(FacultyNode s);
+
 		int size();
 		bool isEmpty();
 
@@ -43,5 +47,6 @@ class FacultyBST
 
 		StudentNode *root;
 	private:
+		void delAllRec(FacultyNode node);
 		int size;
 };
